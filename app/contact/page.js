@@ -29,7 +29,7 @@ export default function Contact() {
       <h3>Brand & speaking inquiries</h3>
       <span className="spec">Organizations</span>
       <p>For consulting, facilitation, keynotes, and brand partnerships. Tell me about the room you're trying to build.</p>
-      <a className="link" href="mailto:info@francescahogi.com?subject=Brand%20inquiry">Email me →</a>
+      <a className="link" href="mailto:francesca@kukai.agency?subject=Brand%20inquiry">Email me →</a>
     </div>
     <div className="offer">
       <h3>Press & media</h3>
