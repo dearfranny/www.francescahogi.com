@@ -58,7 +58,7 @@ export default function Work() {
     </div>
   </div>
 
-  {/* 2 — The True Love Society */}
+  {/* 2 — The True Love Society TEMPORARILY COMMENTED OUT
   <div className="offer-block">
     <span className="offer-num">2</span>
     <h2>The True Love Society</h2>
@@ -81,11 +81,11 @@ export default function Work() {
         <div className="who">Liz, 46</div>
       </div>
     </div>
-  </div>
+  </div> */}
 
   {/* 3 — Love Coaching Intensive */}
   <div className="offer-block">
-    <span className="offer-num">3</span>
+    <span className="offer-num">2</span>
     <h2>The Love Coaching Intensive</h2>
     <span className="price">$15,000</span>
     <span className="spec" style={{ marginTop: 0 }}>3 months · limited spots</span>
