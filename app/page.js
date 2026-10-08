@@ -60,7 +60,7 @@ export default function Home() {
     <h2>I've had a front-row seat to thousands of love stories.</h2>
     <p className="lead">First as a matchmaker. Then as a coach, advisor, and author of <em>How to Find True Love</em> (Hachette). My app, Franny, puts my entire Core Love Codes framework in your pocket.</p>
     <p>My TED talks have reached over two million people. My book is the hands-on guide to the inside job of finding lasting love. And my coaching has helped people of every age and history create the love they'd almost stopped believing was possible.</p>
-    <p>I'm also a two-time Survivor contestant, and I was voted off first both times. So I know something about resilience</p>
+    <p>I'm also a two-time Survivor contestant, and I was voted off first both times. So I know something about resilience.</p>
     <p style={{marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '0.9rem', alignItems: 'flex-start'}}>
       <a className="link" href="https://www.ted.com/talks/francesca_hogi_how_to_unlock_your_flirting_superpowers" target="_blank" rel="noopener">Watch my Flirting TED talk</a>
       <a className="link" href="https://www.ted.com/talks/francesca_hogi_true_love_and_the_myth_of_happily_ever_after" target="_blank" rel="noopener">Watch my True Love TED talk</a>
