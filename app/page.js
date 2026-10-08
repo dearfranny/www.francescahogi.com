@@ -89,8 +89,9 @@ export default function Home() {
       <span className="offer-num">2</span>
       <h3>The True Love Society</h3>
       <span className="spec">Monthly · membership</span>
-      <p>The most accessible way to be coached by me: live group coaching, masterclasses, and a community doing the work alongside you.</p>
-      <a className="link" href="https://www.patreon.com/c/truelovesociety" target="_blank" rel="noopener">See what's involved</a>
+      <p>A place to reimagine the future of dating. Stay in touch by joining my mailing list for updates.</p>
+{/* ORIGINAL TLS CTA <a className="link" href="https://www.patreon.com/c/truelovesociety" target="_blank" rel="noopener">See what's involved</a> */}
+{/* TEMPORARY TLS CTA */}<a className="link" href="#news">Stay connected</a>
     </div>
     <div className="offer">
       <span className="offer-num">3</span>
