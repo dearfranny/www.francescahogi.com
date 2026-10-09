@@ -30,8 +30,8 @@ export default function ForBrands() {
   </div>
 
   <div className="press-callout" style={{ marginTop: "1.6rem" }}>
-    <p>I'm a Culture3 Voice, part of a curated network of speakers and thinkers helping brands understand culture, connection, and what actually moves people.</p>
-    <a className="link" href="https://www.culture3.com/voices-and-partners" target="_blank" rel="noopener">See Culture3 Voices & Partners →</a>
+    <p>I'm a KUKĀI Culture Maker, part of a curated network of speakers and thinkers helping brands understand culture, connection, and what actually moves people.</p>
+    <a className="link" href="https://kukai.agency/" target="_blank" rel="noopener">See KUKĀI Partners →</a>
   </div>
 </section>
 
