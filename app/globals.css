@@ -498,7 +498,8 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
 }
 
 .media-featured {
-  padding-bottom: clamp(4.5rem, 9vw, 8rem);
+  background: var(--plaster);
+  padding: clamp(4rem, 7vw, 6rem) 0;
 }
 
 .featured-media-track {
