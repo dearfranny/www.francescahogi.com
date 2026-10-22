@@ -433,6 +433,7 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+  object-position: top;
 }
 
 .media-meta {
