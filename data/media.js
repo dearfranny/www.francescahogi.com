@@ -62,6 +62,6 @@ export const mediaItems = [
       },
     ],
 
-    featured: true,
+    featured: false,
   },
 ];
