@@ -534,13 +534,17 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
 } /* left right padding */
 
 @media (max-width: 860px) {
-  .media-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+   .featured-media-page {
+    display: block;
+    width: 100%;
   }
 
-  .featured-media-page {
-    grid-template-columns: 1fr;
+  .featured-media-page .media-card {
+    width: 100%;
+  }
+
+  .media-blurb {
+    display: none;
   }
 }
 
