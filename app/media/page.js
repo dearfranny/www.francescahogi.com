@@ -79,6 +79,7 @@ export default async function Media({ searchParams }) {
             </span>
           </div>
 
+        <div className="featured-media-inner">
           <FeaturedMediaCarousel>
             {featuredMedia.map((item) => (
               <MediaCard
@@ -87,6 +88,7 @@ export default async function Media({ searchParams }) {
               />
             ))}
           </FeaturedMediaCarousel>
+                  </div>
         </section>
       )}
 
