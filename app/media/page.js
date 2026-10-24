@@ -1,13 +1,17 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import MediaCard from "@/components/MediaCard";
+import FeaturedMediaCarousel from "@/components/FeaturedMediaCarousel";
+import MediaPagination from "@/components/MediaPagination";
 import { mediaItems } from "@/data/media";
 
 export const metadata = {
   title: "Media",
 };
 
-export default function Media() {
+export default async function Media({ searchParams }) {
+  const params = await searchParams;
+
   const sortedMedia = [...mediaItems].sort(
     (a, b) => new Date(b.date) - new Date(a.date)
   );
@@ -18,6 +22,27 @@ export default function Media() {
 
   const archiveMedia = sortedMedia.filter(
     (item) => !item.featured
+  );
+
+  const itemsPerPage = 12;
+
+  const totalPages = Math.max(
+    1,
+    Math.ceil(archiveMedia.length / itemsPerPage)
+  );
+
+  const requestedPage = Number(params?.page || 1);
+
+  const currentPage =
+    Number.isFinite(requestedPage) && requestedPage > 0
+      ? Math.min(requestedPage, totalPages)
+      : 1;
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+
+  const paginatedMedia = archiveMedia.slice(
+    startIndex,
+    startIndex + itemsPerPage
   );
 
   return (
@@ -49,22 +74,27 @@ export default function Media() {
       {featuredMedia.length > 0 && (
         <section className="media-featured">
           <div className="wrap media-section-heading">
-            <span className="eyebrow">Featured</span>
+            <span className="eyebrow">
+              Featured
+            </span>
           </div>
 
-          <div className="featured-media-track">
+          <FeaturedMediaCarousel>
             {featuredMedia.map((item) => (
               <MediaCard
                 key={item.id}
                 item={item}
               />
             ))}
-          </div>
+          </FeaturedMediaCarousel>
         </section>
       )}
 
       {archiveMedia.length > 0 && (
-        <section className="wrap">
+        <section
+          className="wrap"
+          id="media-archive"
+        >
           <div className="media-section-heading">
             <span className="eyebrow">
               More media
@@ -72,13 +102,18 @@ export default function Media() {
           </div>
 
           <div className="media-grid">
-            {archiveMedia.map((item) => (
+            {paginatedMedia.map((item) => (
               <MediaCard
                 key={item.id}
                 item={item}
               />
             ))}
           </div>
+
+          <MediaPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+          />
         </section>
       )}
 
