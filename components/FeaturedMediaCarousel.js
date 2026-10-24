@@ -5,6 +5,31 @@ import { useRef } from "react";
 export default function FeaturedMediaCarousel({ children }) {
   const trackRef = useRef(null);
 
+  const animateScroll = (element, target, duration = 650) => {
+    const start = element.scrollLeft;
+    const distance = target - start;
+    const startTime = performance.now();
+
+    const easeInOut = (t) =>
+      t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const step = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      element.scrollLeft =
+        start + distance * easeInOut(progress);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
   const scrollFeatured = (direction) => {
     const track = trackRef.current;
 
@@ -21,45 +46,47 @@ export default function FeaturedMediaCarousel({ children }) {
       ? secondCard.offsetLeft - firstCard.offsetLeft
       : firstCard.offsetWidth;
 
-    const isMobile = window.matchMedia("(max-width: 860px)").matches;
-    const cardsPerScroll = isMobile ? 1 : 3;
+    const isMobile = window.matchMedia(
+      "(max-width: 860px)"
+    ).matches;
 
+    const cardsPerScroll = isMobile ? 1 : 3;
     const scrollAmount = cardStep * cardsPerScroll;
-    const maxScroll = track.scrollWidth - track.clientWidth;
+
+    const maxScroll =
+      track.scrollWidth - track.clientWidth;
+
     const tolerance = 8;
 
+    let target;
+
     if (direction === "next") {
-      if (track.scrollLeft >= maxScroll - tolerance) {
-        track.scrollTo({
-          left: 0,
-          behavior: "smooth",
-        });
-      } else {
-        track.scrollBy({
-          left: scrollAmount,
-          behavior: "smooth",
-        });
-      }
+      target =
+        track.scrollLeft >= maxScroll - tolerance
+          ? 0
+          : Math.min(
+              track.scrollLeft + scrollAmount,
+              maxScroll
+            );
+    } else {
+      target =
+        track.scrollLeft <= tolerance
+          ? maxScroll
+          : Math.max(
+              track.scrollLeft - scrollAmount,
+              0
+            );
     }
 
-    if (direction === "previous") {
-      if (track.scrollLeft <= tolerance) {
-        track.scrollTo({
-          left: maxScroll,
-          behavior: "smooth",
-        });
-      } else {
-        track.scrollBy({
-          left: -scrollAmount,
-          behavior: "smooth",
-        });
-      }
-    }
+    animateScroll(track, target);
   };
 
   return (
     <>
-      <div className="featured-media-track" ref={trackRef}>
+      <div
+        className="featured-media-track"
+        ref={trackRef}
+      >
         {children}
       </div>
 
@@ -67,7 +94,9 @@ export default function FeaturedMediaCarousel({ children }) {
         <button
           className="featured-media-arrow"
           type="button"
-          onClick={() => scrollFeatured("previous")}
+          onClick={() =>
+            scrollFeatured("previous")
+          }
           aria-label="View previous featured media"
         >
           ←
@@ -76,7 +105,9 @@ export default function FeaturedMediaCarousel({ children }) {
         <button
           className="featured-media-arrow"
           type="button"
-          onClick={() => scrollFeatured("next")}
+          onClick={() =>
+            scrollFeatured("next")
+          }
           aria-label="View next featured media"
         >
           →
