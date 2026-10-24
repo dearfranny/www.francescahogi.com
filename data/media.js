@@ -141,7 +141,7 @@ export const mediaItems = [
     type: "TED Talk",
     date: "2025-11-09",
     displayDate: "Nov 9–11, 2025",
-    image: "/images/media/TedNext-2024-2.jpg",
+    image: "/images/media/TedNext-2024-2.png",
     imageAlt: "Francesca Hogi speaking at TEDNext 2025",
     mainUrl: "https://www.ted.com/talks/francesca_hogi_how_to_unlock_your_flirting_superpowers",
     blurb: "In this smart, playful TEDNext talk, Francesca invites us to rethink flirting as a way to make another person feel seen, special, and acknowledged. She breaks effective flirting down into presence, enthusiasm, curiosity, sincere compliments, and playfulness, offering an accessible framework for building confidence and creating genuine chemistry. Her message is simple: flirting isn’t manipulation or performance. At its best, it’s a practice of meaningful human connection.",
