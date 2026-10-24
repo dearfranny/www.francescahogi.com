@@ -1,118 +1,103 @@
 "use client";
 
-import { useRef } from "react";
+import { Children, useEffect, useState } from "react";
+
+const FADE_DURATION = 400;
 
 export default function FeaturedMediaCarousel({ children }) {
-  const trackRef = useRef(null);
+  const items = Children.toArray(children);
 
-  const animateScroll = (element, target, duration = 750) => {
-    const start = element.scrollLeft;
-    const distance = target - start;
-    const startTime = performance.now();
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isFading, setIsFading] = useState(false);
 
-    const easeInOut = (t) =>
-      t < 0.5
-        ? 4 * t * t * t
-        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 860px)");
 
-    const step = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      element.scrollLeft =
-        start + distance * easeInOut(progress);
-
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
+    const updateItemsPerPage = () => {
+      setItemsPerPage(mediaQuery.matches ? 1 : 3);
+      setCurrentPage(0);
     };
 
-    requestAnimationFrame(step);
-  };
+    updateItemsPerPage();
 
-  const scrollFeatured = (direction) => {
-    const track = trackRef.current;
+    mediaQuery.addEventListener("change", updateItemsPerPage);
 
-    if (!track) return;
+    return () => {
+      mediaQuery.removeEventListener(
+        "change",
+        updateItemsPerPage
+      );
+    };
+  }, []);
 
-    const cards = track.querySelectorAll(".media-card");
+  const totalPages = Math.ceil(
+    items.length / itemsPerPage
+  );
 
-    if (!cards.length) return;
+  const startIndex = currentPage * itemsPerPage;
 
-    const firstCard = cards[0];
-    const secondCard = cards[1];
+  const visibleItems = items.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
-    const cardStep = secondCard
-      ? secondCard.offsetLeft - firstCard.offsetLeft
-      : firstCard.offsetWidth;
+  const changePage = (direction) => {
+    if (totalPages <= 1 || isFading) return;
 
-    const isMobile = window.matchMedia(
-      "(max-width: 860px)"
-    ).matches;
+    setIsFading(true);
 
-    const cardsPerScroll = isMobile ? 1 : 3;
-    const scrollAmount = cardStep * cardsPerScroll;
+    setTimeout(() => {
+      setCurrentPage((current) => {
+        if (direction === "next") {
+          return (current + 1) % totalPages;
+        }
 
-    const maxScroll =
-      track.scrollWidth - track.clientWidth;
+        return (
+          (current - 1 + totalPages) %
+          totalPages
+        );
+      });
 
-    const tolerance = 8;
-
-    let target;
-
-    if (direction === "next") {
-      target =
-        track.scrollLeft >= maxScroll - tolerance
-          ? 0
-          : Math.min(
-              track.scrollLeft + scrollAmount,
-              maxScroll
-            );
-    } else {
-      target =
-        track.scrollLeft <= tolerance
-          ? maxScroll
-          : Math.max(
-              track.scrollLeft - scrollAmount,
-              0
-            );
-    }
-
-    animateScroll(track, target);
+      requestAnimationFrame(() => {
+        setIsFading(false);
+      });
+    }, FADE_DURATION);
   };
 
   return (
     <>
       <div
-        className="featured-media-track"
-        ref={trackRef}
+        className={`featured-media-page ${
+          isFading ? "is-fading" : ""
+        }`}
       >
-        {children}
+        {visibleItems}
       </div>
 
-      <div className="featured-media-controls">
-        <button
-          className="featured-media-arrow"
-          type="button"
-          onClick={() =>
-            scrollFeatured("previous")
-          }
-          aria-label="View previous featured media"
-        >
-          ←
-        </button>
+      {totalPages > 1 && (
+        <div className="featured-media-controls">
+          <button
+            className="featured-media-arrow"
+            type="button"
+            onClick={() =>
+              changePage("previous")
+            }
+            aria-label="View previous featured media"
+          >
+            ←
+          </button>
 
-        <button
-          className="featured-media-arrow"
-          type="button"
-          onClick={() =>
-            scrollFeatured("next")
-          }
-          aria-label="View next featured media"
-        >
-          →
-        </button>
-      </div>
+          <button
+            className="featured-media-arrow"
+            type="button"
+            onClick={() => changePage("next")}
+            aria-label="View next featured media"
+          >
+            →
+          </button>
+        </div>
+      )}
     </>
   );
 }
