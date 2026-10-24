@@ -577,7 +577,7 @@ export const mediaItems = [
     links: [
       { action: "Read", label: "The New York Times", url: "https://www.nytimes.com/2021/03/04/style/clubhouse-audio-creator-collective.html" },
     ],
-    featured: true,
+    featured: false,
     id: "nyt-audio-creators",
   },
 
@@ -609,7 +609,7 @@ export const mediaItems = [
     links: [
       { action: "Read", label: "The Washington Post", url: "https://www.washingtonpost.com/news/soloish/wp/2017/03/20/when-a-ghost-becomes-a-zombie-the-dating-phenomenon-in-one-screenshot/" },
     ],
-    featured: true,
+    featured: false,
     id: "washington-post-zombie",
   },
 
@@ -625,7 +625,7 @@ export const mediaItems = [
     links: [
       { action: "Read", label: "The Washington Post", url: "https://www.washingtonpost.com/lifestyle/magazine/date-labdaters-say-they-dont-tolerate-racial-bias-their-actions-say-they-do-have-racial-preferences/2020/06/18/0d1eace4-a039-11ea-9590-1858a893bd59_story.html" },
     ],
-    featured: true,
+    featured: false,
     id: "washington-post-racial-bias",
   },
 
