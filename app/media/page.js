@@ -6,7 +6,9 @@ import MediaPagination from "@/components/MediaPagination";
 import { mediaItems } from "@/data/media";
 
 export const metadata = {
-  title: "Media",
+  title: "Press & Media",
+  description:
+    "Explore Francesca Hogi’s media appearances, interviews, podcasts, articles, TED Talks, and speaking engagements on love, dating, relationships, and human connection.",
 };
 
 export default async function Media({ searchParams }) {
