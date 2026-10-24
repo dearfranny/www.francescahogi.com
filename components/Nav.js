@@ -16,6 +16,7 @@ export default function Nav() {
         <Link href="/work">Work with me</Link>
         <Link href="/for-brands">For brands</Link>
         <Link href="/for-men">For men</Link>
+        <Link href="/media">Media</Link>
         <Link href="/contact">Contact</Link>
       </div>
 
@@ -36,6 +37,7 @@ export default function Nav() {
         <Link href="/work" onClick={close}>Work with me</Link>
         <Link href="/for-brands" onClick={close}>For brands</Link>
         <Link href="/for-men" onClick={close}>For men</Link>
+        <Link href="/media" onClick={close}>Media</Link>
         <Link href="/contact" onClick={close}>Contact</Link>
       </div>
     </nav>
