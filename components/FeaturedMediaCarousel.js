@@ -5,7 +5,7 @@ import { useRef } from "react";
 export default function FeaturedMediaCarousel({ children }) {
   const trackRef = useRef(null);
 
-  const animateScroll = (element, target, duration = 650) => {
+  const animateScroll = (element, target, duration = 750) => {
     const start = element.scrollLeft;
     const distance = target - start;
     const startTime = performance.now();
