@@ -24,7 +24,7 @@ export default async function Media({ searchParams }) {
     (item) => !item.featured
   );
 
-  const itemsPerPage = 12;
+  const itemsPerPage = 9;
 
   const totalPages = Math.max(
     1,
