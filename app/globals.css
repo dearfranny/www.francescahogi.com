@@ -431,7 +431,9 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
 .media-image img {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
 }
 
 .media-meta {
