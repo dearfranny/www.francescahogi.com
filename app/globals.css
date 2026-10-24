@@ -540,7 +540,7 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
 
   opacity: 1;
   transition: opacity 400ms ease;
-} /* 3col desktop, 1col mobile */
+}
 
 .featured-media-page.is-fading {
   opacity: 0;
@@ -554,6 +554,10 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
 
   .featured-media-page {
     grid-template-columns: 1fr;
+    
+  }
+   .media-blurb {
+    display: none;
   }
 }
 
