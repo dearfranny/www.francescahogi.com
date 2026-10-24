@@ -505,13 +505,13 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
 .featured-media-track {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100vw - (2 * var(--pad)) - 5.2rem) / 3);
+  grid-auto-columns: calc((100% - 5.2rem) / 3);
   gap: clamp(1.5rem, 3vw, 2.6rem);
 
   overflow-x: auto;
   overscroll-behavior-inline: contain;
 
-  padding: 0 var(--pad) 1.5rem;
+  padding: 0 0 1.5rem;
 
   scroll-snap-type: inline mandatory;
   scroll-behavior: smooth;
@@ -526,7 +526,7 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
   display: flex;
   justify-content: flex-end;
   gap: 0.75rem;
-  padding: 1rem var(--pad) 0;
+  padding: 1rem 0 0;
 }
 
 .featured-media-arrow {
@@ -551,6 +551,10 @@ footer .fnav{display:flex;gap:1.5rem;flex-wrap:wrap}
 
 .featured-media-track .media-card {
   scroll-snap-align: start;
+}
+
+.featured-media-inner {
+  padding: 0 var(--pad);
 }
 
 @media (max-width: 860px) {
