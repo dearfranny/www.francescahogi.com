@@ -173,7 +173,7 @@ export const mediaItems = [
     outlet: "Out of the Clouds with Anne Muhlethaler",
     type: "Podcast",
     date: "2025-04-07",
-    image: "/images/media/Out-of-the-Clouds.jpg",
+    image: "/images/media/Out-of-the-Clouds-2.jpg",
     imageAlt: "Francesca Hogi on Out of the Clouds with Anne Muhlethaler",
     mainUrl: "https://www.youtube.com/watch?v=9ZPpnfigv0U",
     blurb: "Francesca joins Anne Muhlethaler to explore her journey from lawyer to love coach, the ideas behind How to Find True Love, and why the “fairy tale industrial complex” leaves so many people disappointed in romance. They discuss self-love, intentional dating, romantic conditioning, and Francesca’s mindset, heartset, soulset, and skill set framework for creating meaningful relationships rooted in authenticity rather than fantasy.",
