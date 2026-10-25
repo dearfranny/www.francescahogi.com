@@ -56,7 +56,7 @@ export const mediaItems = [
     outlet: "Build The Damn Thing with Kathryn Finney",
     type: "Podcast",
     date: "2026-02-16",
-    image: "/images/media/Build-the-Damn-Thing.jpg",
+    image: "/images/media/BTDT-Finding-Your-Purpose.jpg",
     imageAlt: "Francesca Hogi on Build The Damn Thing with Kathryn Finney",
     mainUrl: "https://podcasts.apple.com/us/podcast/build-the-damn-thing-with-kathryn-finney/id1570668836?i=1000750048526",
     blurb: "Francesca shares her journey from corporate law to entrepreneurship and the practical, emotional work behind building a more aligned life. She talks candidly about preparing financially for change, creating multiple income streams, facing fear, finding your first customers, and letting purpose guide your business. It’s an honest conversation about reinvention, entrepreneurship, and creating work that reflects your gifts, values, and the life you actually want to live.",
