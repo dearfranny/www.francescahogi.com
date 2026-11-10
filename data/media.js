@@ -343,9 +343,6 @@ export const mediaItems = [
     imageAlt: "Francesca Hogi speaking at The Power of Love Summit",
     mainUrl: "https://poweroflovesummit.com/",
     blurb: "As a featured speaker at the 2025 Power of Love Summit, Francesca explores how meaningful relationships are created through mutual growth, emotional safety, and aligned intention. Rather than seeing love as finding someone who completes you, she invites participants to approach partnership as an ongoing act of co-creation. Her talk brings clarity and optimism to what it means to build relationships capable of evolving alongside the people within them.",
-    links: [
-      { action: "Learn more", label: "Power of Love Summit", url: "https://poweroflovesummit.com/" },
-    ],
     featured: false,
     id: "power-of-love-summit-2025",
   },
@@ -359,9 +356,6 @@ export const mediaItems = [
     imageAlt: "Francesca Hogi speaking at ACT3 Convening",
     mainUrl: "https://www.act3convening.com/",
     blurb: "Francesca was a featured speaker at the 2025 ACT3 Convening, a gathering devoted to reframing midlife as a season of possibility, reinvention, and growth. Contributing her expertise on dating and friendships, Francesca explored how meaningful connection can evolve throughout life and how people can approach relationships with greater intention during their “third act.” Her perspective brings optimism and curiosity to love, friendship, and connection in midlife.",
-    links: [
-      { action: "Learn more", label: "ACT3 Convening", url: "https://www.act3convening.com/" },
-    ],
     featured: false,
     id: "act3-convening-midlife",
   },
@@ -375,9 +369,6 @@ export const mediaItems = [
     imageAlt: "Francesca Hogi on The ACT3 Convening Podcast",
     mainUrl: "https://podcasts.apple.com/us/podcast/francesca-hogi-with-guest-host-leilani-brown/id1808120882?i=1000711831241",
     blurb: "Guest host Leilani Brown sits down with Francesca to explore her remarkable path from reality TV contestant to matchmaker, TED speaker, and author of How to Find True Love. Francesca shares insights on romantic flow, lasting relationships, and the possibilities available to people navigating love in midlife. Her empowering perspective invites listeners to reconsider old assumptions and stay open to connection at every stage of life.",
-    links: [
-      { action: "Listen", label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/francesca-hogi-with-guest-host-leilani-brown/id1808120882?i=1000711831241" },
-    ],
     featured: false,
     id: "act3-podcast-francesca-hogi",
   },
@@ -443,7 +434,6 @@ export const mediaItems = [
     links: [
       { action: "Listen", label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/how-to-date-like-a-ceo-and-attract-the/id1570668836?i=1000709094101" },
       { action: "Listen", label: "Spotify", url: "https://open.spotify.com/episode/5wz7JjhmIx4TdDYKKJ7m8o" },
-      { action: "Watch", label: "YouTube", url: "https://www.youtube.com/watch?v=eDgN05-r_yo" },
     ],
     featured: false,
     id: "build-damn-thing-date-like-ceo",
@@ -602,7 +592,7 @@ export const mediaItems = [
     outlet: "The Washington Post",
     type: "Article",
     date: "2017-03-20",
-    image: "/images/media/The-Washington-Post.jpg",
+    image: "/images/media/The-Washington-Post-2.jpg",
     imageAlt: "Francesca Hogi featured in The Washington Post",
     mainUrl: "https://www.washingtonpost.com/news/soloish/wp/2017/03/20/when-a-ghost-becomes-a-zombie-the-dating-phenomenon-in-one-screenshot/",
     blurb: "Francesca weighs in on “zombie-ing,” the dating phenomenon where someone who previously ghosted suddenly reappears. Drawing from both personal and professional experience, she explains why low-risk digital communication makes it easier for people to resurface without accountability. Francesca also offers a more hopeful perspective: reconnection can work when someone returns with genuine self-awareness and respect. The key is acknowledging what happened rather than pretending the past never existed.",
@@ -618,7 +608,7 @@ export const mediaItems = [
     outlet: "The Washington Post",
     type: "Article",
     date: "2020-06-25",
-    image: "/images/media/The-Washington-Post-2.jpg",
+    image: "/images/media/The-Washington-Post.jpg",
     imageAlt: "Francesca Hogi featured in The Washington Post",
     mainUrl: "https://www.washingtonpost.com/lifestyle/magazine/date-labdaters-say-they-dont-tolerate-racial-bias-their-actions-say-they-do-have-racial-preferences/2020/06/18/0d1eace4-a039-11ea-9590-1858a893bd59_story.html",
     blurb: "Francesca joins other dating experts in examining how racial bias shapes romantic preferences, even among people who consider themselves inclusive. She discusses coded language, assumptions about who will find us desirable, and the additional concerns Black daters may carry around fetishization and emotional labor. The piece challenges readers to look beyond stated values and honestly examine how unconscious bias influences who they pursue, reject, and imagine as potential partners.",
@@ -656,7 +646,6 @@ export const mediaItems = [
     blurb: "Francesca joins Evan Marc Katz for a candid conversation about what it really takes to create lasting love. They explore the gap between professional success and romantic fulfillment, the difference between falling in love and co-creating it, and how dating apps have shaped modern expectations. Francesca also shares why self-worth, emotional safety, and playful connection matter when building relationships that feel aligned rather than transactional.",
     links: [
       { action: "Listen", label: "Spotify", url: "https://open.spotify.com/episode/5XrP1vec3JQe38uaJppFS9" },
-      { action: "Listen", label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-love-u-podcast-with-evan-marc-katz/id1091310056" },
     ],
     featured: false,
     id: "love-u-true-love",
